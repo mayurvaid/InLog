@@ -9,12 +9,13 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+import com.inlog.config.BaseConfig;
 import com.mongodb.MongoClient;
 
 @Configuration
 @EnableMongoRepositories("com.inlog.dao.repositories")
 @PropertySource("classpath:properties/db-config.properties")
-public class MongoDBConfig {
+public class MongoDBConfig extends BaseConfig{
 	@Value("${mongo-db-name}")
 	private String dbName;
 	
@@ -27,4 +28,5 @@ public class MongoDBConfig {
 		return mongoTemplate;
 
 	}
+	
 }
