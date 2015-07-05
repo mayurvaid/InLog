@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.0.0.RELEASE/a82202c4d09d684a8d52ade479c0e508d904700b/spring-webmvc-4.0.0.RELEASE.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.0.0.RELEASE/1c6b61a332deb3609aaa8843c6b2a84bde97df99/spring-webmvc-4.0.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/jstl/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/1.3.1.RELEASE/f48721509bda3ea63d7c2fac6ca9f6a2e7293af7/spring-data-mongodb-1.3.1.RELEASE.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/1.3.1.RELEASE/922f4e68a31f44721f74d469e36c1b97cbdf6d31/spring-data-mongodb-1.3.1.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/2.11.0/3299eaeb39b370a1134d08d1364999135b32efa3/mongo-java-driver-2.11.0.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/2.11.0/44b7c39ed4f32ca4dea0439f25a5ad505540e847/mongo-java-driver-2.11.0-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.0.1/6bf0ebb7efd993e222fc1112377b5e92a13b38dd/javax.servlet-api-3.0.1.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.0.1/1952f91d84016a39e31346c9d18bd8c9c4a128a/javax.servlet-api-3.0.1-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.0.0.RELEASE/97e97a04aede419679392176ec1df175d3e9a7a0/spring-beans-4.0.0.RELEASE.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.0.0.RELEASE/96ce15137a178249aa14d58ea1e08bc7da93ab71/spring-beans-4.0.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.0.0.RELEASE/57586271e775982f8961e1e7e338447d4af1864c/spring-context-4.0.0.RELEASE.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.0.0.RELEASE/54a7ccfd434c2ca2ba3a6265f9c42d34b0d05734/spring-context-4.0.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.0.0.RELEASE/73b485e25b13a7a44b73a301fe6757c3cbad453e/spring-core-4.0.0.RELEASE.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.0.0.RELEASE/db9dd83713dbad3d7810a269c026d798f0b8d6db/spring-core-4.0.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.0.0.RELEASE/199be03c976524b6427dff31078227bfc703400b/spring-expression-4.0.0.RELEASE.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.0.0.RELEASE/60c70ff1bb9c5ab97a7f3c3230f86cf738bc1505/spring-expression-4.0.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.0.0.RELEASE/6ce2dda16a3c1581920fc17551f3ae17d26499aa/spring-web-4.0.0.RELEASE.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.0.0.RELEASE/5223cc0bd5cd9fd7fce1c72046577e937cc378e9/spring-web-4.0.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/3.1.4.RELEASE/e7cd40e53940e26f24f5500a084b45f57fabaa01/spring-tx-3.1.4.RELEASE.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/3.1.4.RELEASE/6dbe85fc2fdeb5c0ae472852860aaeddacf35fa9/spring-tx-3.1.4.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/1.6.1.RELEASE/772e2daa59003ae968c5738077b3966e16fff02d/spring-data-commons-1.6.1.RELEASE.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/1.6.1.RELEASE/daefcffb8e6eb17fabefcfa5f91e7dc8742bc627/spring-data-commons-1.6.1.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.1/1a508b0ecd360507a39a4dbaedd1aa4750741f6d/slf4j-api-1.7.1.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.1/87991730d4dd7e99209c2ca72f174cf5f58eccb6/slf4j-api-1.7.1-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.1/a11c000cf26e42ba30b7fb5bd60630a57783fe2d/jcl-over-slf4j-1.7.1.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.1/9dca585b262f7b8befc070e5f1d972dda96202eb/jcl-over-slf4j-1.7.1-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/4a4b6d692e17846a9f3da036438a7ac491d3c814/aopalliance-1.0-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.0.0.RELEASE/cceb3e9510774b3f88b008a70c6a9aefb98d891f/spring-aop-4.0.0.RELEASE.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.0.0.RELEASE/faeab9c14a8c24993dd28179c1c20706c3d0ec0b/spring-aop-4.0.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/montu/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar" sourcepath="C:/Users/montu/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/f3f156cbff0e0fb0d64bfce31a352cce4a33bc19/commons-logging-1.1.1-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
