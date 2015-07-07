@@ -26,5 +26,6 @@ public class AppInitializer implements WebApplicationInitializer {
         context.setConfigLocation("com.inlog.config");
         return context;
     }
+    
 
 }

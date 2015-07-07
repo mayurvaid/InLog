@@ -8,7 +8,7 @@ import com.inlog.config.mongodb.MongoDBConfig;
 import com.inlog.web.HelloController;
 
 @Configuration
-@Import({ MongoDBConfig.class })
+@Import({ SecurityConfig.class,MongoDBConfig.class })
 @ComponentScan(basePackageClasses = { HelloController.class })
 public class AppConfig {
 
