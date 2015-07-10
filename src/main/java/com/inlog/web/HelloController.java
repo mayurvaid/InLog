@@ -1,19 +1,16 @@
 package com.inlog.web;
 
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.inlog.dao.repositories.UserRepository;
-import com.inlog.entities.User;
 
-@RestController
-@RequestMapping("/service/greeting")
 public class HelloController {
 	@Autowired
 	private MongoTemplate template;
@@ -23,9 +20,13 @@ public class HelloController {
 	@Autowired
 	private UserRepository userRepo;
 
-	@RequestMapping(value = "/{name}", method = RequestMethod.GET, produces = "application/json")
-	public User getGreeting(@PathVariable String name) {
+	// @RequestMapping(value = "/{name}", method = RequestMethod.GET, produces =
+	// "application/json")
+	public String getGreeting(@PathVariable String name) {
 		logger.info("--------------heere");
+		String s = Jwts.builder().setSubject("Joe")
+				.signWith(SignatureAlgorithm.HS256, "Mayur").compact();
+		// s throw new AccessDeniedException("error");
 		// Aggregation agg = newAggregation(
 		// match(Criteria.where("username").is("tedbsajdgas")),
 		// group("id").count().as("total"),
@@ -45,7 +46,9 @@ public class HelloController {
 		 * userRepo.save(user);
 		 */
 
-		String result = "Hello " + name;
-		return userRepo.getUserByUserName("mayur1");
+		// String result = "Hello " + name;
+		// return userRepo.getUserByUserName("mayur1");
+
+		return s;
 	}
 }

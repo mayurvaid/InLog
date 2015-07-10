@@ -3,14 +3,19 @@ package com.inlog.entities;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Document(collection = "users")
-public class User extends BaseDataObject{
- 
+public class User extends BaseDataObject {
+
 	@Id
 	private String id;
- 
+
 	String username;
- 
+	
+	String authToken;
+
+	@JsonIgnore
 	String password;
 
 	public String getId() {
@@ -37,5 +42,14 @@ public class User extends BaseDataObject{
 		this.password = password;
 	}
 
+	public String getAuthToken() {
+		return authToken;
+	}
+
+	public void setAuthToken(String authToken) {
+		this.authToken = authToken;
+	}
+	
+	
 
 }
