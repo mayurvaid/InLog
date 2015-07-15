@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "item")
 public class Item extends BaseDataObject{
 	@Id
-	private String itemId;
+	private String id;
 	private String categoryName;
 	private Double width;
 	private Double height;
@@ -19,11 +19,11 @@ public class Item extends BaseDataObject{
 	private String itemtype;
 	private String itemName;
 	private String quanityunit;
-	public String getItemId() {
-		return itemId;
+	public String getId() {
+		return id;
 	}
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getCategoryName() {
 		return categoryName;
@@ -99,7 +99,7 @@ public class Item extends BaseDataObject{
 	}
 	@Override
 	public String toString() {
-		return "Item [itemId=" + itemId + ", categoryName=" + categoryName
+		return "Item [itemId=" + id + ", categoryName=" + categoryName
 				+ ", width=" + width + ", height=" + height + ", quantity="
 				+ quantity + ", price=" + price + ", color=" + color
 				+ ", brand=" + brand + ", shape=" + shape + ", fabric="

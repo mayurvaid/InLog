@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.inlog.annotation.SecurityCheck;
+import com.inlog.entities.InlogException;
 import com.inlog.entities.User;
+import com.inlog.enums.UserRoleEnum;
 import com.inlog.services.IUserService;
 
 @RestController
@@ -16,15 +19,17 @@ import com.inlog.services.IUserService;
 public class UserController {
 	private final IUserService userService;
 	private static final Logger logger = LoggerFactory
-			.getLogger(HelloController.class);
+			.getLogger(UserController.class);
 
 	@Autowired
 	public UserController(IUserService userService) {
 		this.userService = userService;
 	}
 
+	@SecurityCheck(userRole = UserRoleEnum.ADMIN)
 	@RequestMapping(value = "/addUserDetails", method = RequestMethod.POST, produces = "application/json")
-	public User setUserDetails(@ModelAttribute("user") User user) {
+	public User setUserDetails(@ModelAttribute("user") User user)
+			throws InlogException {
 		logger.info("Adding user details {}", user);
 		
 		userService.saveUserDetails(user);

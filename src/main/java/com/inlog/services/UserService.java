@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.inlog.dao.IUserDao;
 import com.inlog.dao.repositories.UserRepository;
+import com.inlog.entities.InlogException;
 import com.inlog.entities.User;
 
 @Service
@@ -18,10 +20,12 @@ public class UserService implements IUserService {
 	private String SHARED_SECRET_KEY;
 
 	private final UserRepository userRepository;
+	private final IUserDao userDao;
 
 	@Autowired
-	public UserService(UserRepository userRepository) {
+	public UserService(UserRepository userRepository, IUserDao userDao) {
 		this.userRepository = userRepository;
+		this.userDao = userDao;
 	}
 
 	/*
@@ -31,8 +35,11 @@ public class UserService implements IUserService {
 	 * com.inlog.services.IUserService#saveUserDetails(com.inlog.entities.User)
 	 */
 	@Override
-	public void saveUserDetails(User user) {
-		System.out.println(SHARED_SECRET_KEY);
+	public void saveUserDetails(User user) throws InlogException {
+		if (userDao.getUserCountByUserName(user.getUsername()) > 0) {
+			throw new InlogException(
+					"User already exits please select a different user");
+		}
 		user.setAuthToken(getAuthToken(user.getUsername(), SHARED_SECRET_KEY));
 		userRepository.save(user);
 	}
@@ -44,16 +51,21 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public boolean validateAuthToken(String username , String authToken) {
+	public boolean validateAuthToken(String username, String authToken) {
 		try {
 			return StringUtils.equals(
 					Jwts.parser().setSigningKey(SHARED_SECRET_KEY)
-							.parseClaimsJws(authToken).getBody()
-							.getSubject(),username);
+							.parseClaimsJws(authToken).getBody().getSubject(),
+					username);
 
 		} catch (SignatureException ex) {
 			return false;
 		}
+	}
+
+	@Override
+	public User getUserDetails(String username) {
+		return userRepository.getUserByUserName(username);
 	}
 
 }

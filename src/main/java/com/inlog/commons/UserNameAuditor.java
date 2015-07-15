@@ -1,13 +1,12 @@
-package com.inlog.config;
+package com.inlog.commons;
 
 import org.springframework.data.domain.AuditorAware;
 
 public class UserNameAuditor implements AuditorAware<String> {
-	private static final String USER_NAME = "InLog";
 
 	@Override
 	public String getCurrentAuditor() {
-		return USER_NAME;
+		return UserThread.getUserName();
 	}
 
 }

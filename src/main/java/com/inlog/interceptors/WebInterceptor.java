@@ -3,20 +3,19 @@ package com.inlog.interceptors;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.inlog.commons.UserThread;
 import com.inlog.services.IUserService;
 
 @Component
 public class WebInterceptor implements HandlerInterceptor {
 	private static final String AUTH_HEADER = "X-AUTH-HEADER";
-	private static final String ADD_USER_REQUEST = "/InLog/api/v1/addUserDetails";
-	private static final String USER_NAME = "username";
+	private static final String AUTH_USER_HEADER = "X-AUTH-USER-HEADER";
 
 	@Autowired
 	private IUserService userService;
@@ -36,17 +35,15 @@ public class WebInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object arg2) throws Exception {
-		if (StringUtils.equalsIgnoreCase(ADD_USER_REQUEST,
-				request.getRequestURI())) {
-			return true;
-		}
-
 		String authHeader = request.getHeader(AUTH_HEADER);
-		String userName = request.getParameter(USER_NAME);
+		String userName = request.getHeader(AUTH_USER_HEADER);
 		if (!userService.validateAuthToken(userName, authHeader)) {
 			throw new AccessDeniedException(
 					"Token not found or token is not valid , please contact administrator");
+		} else {
+			UserThread.setThreadLocal(userName);
 		}
+
 		return true;
 	}
 

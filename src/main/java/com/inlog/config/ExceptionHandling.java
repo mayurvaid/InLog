@@ -8,14 +8,15 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.inlog.entities.AppError;
+import com.inlog.entities.InlogException;
 
 @ControllerAdvice
 @Component
 public class ExceptionHandling {
 
 	@ResponseBody
-	@ExceptionHandler(AccessDeniedException.class)
-	public AppError handleCustomException(AccessDeniedException ex) {
+	@ExceptionHandler({ AccessDeniedException.class, InlogException.class })
+	public AppError handleCustomException(Exception ex) {
 		AppError accessErr = new AppError();
 
 		accessErr.setErroCode("Access Denied");
@@ -25,7 +26,7 @@ public class ExceptionHandling {
 		return accessErr;
 
 	}
-	
+
 	@ResponseBody
 	@ExceptionHandler(Exception.class)
 	public AppError handleException(Exception ex) {
@@ -38,6 +39,5 @@ public class ExceptionHandling {
 		return appErr;
 
 	}
-	
-	
+
 }

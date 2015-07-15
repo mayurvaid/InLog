@@ -11,12 +11,42 @@ public class User extends BaseDataObject {
 	@Id
 	private String id;
 
-	String username;
-	
-	String authToken;
+	private String username;
+
+	private String authToken;
 
 	@JsonIgnore
-	String password;
+	private String password;
+	
+	private String address;
+	
+	private String phoneno;
+	
+	private String userRole;
+	
+	public String getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhoneno() {
+		return phoneno;
+	}
+
+	public void setPhoneno(String phoneno) {
+		this.phoneno = phoneno;
+	}
 
 	public String getId() {
 		return id;
@@ -49,7 +79,36 @@ public class User extends BaseDataObject {
 	public void setAuthToken(String authToken) {
 		this.authToken = authToken;
 	}
-	
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", authToken="
+				+ authToken + ", password=" + password + "]";
+	}
 
 }
