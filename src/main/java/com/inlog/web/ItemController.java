@@ -44,7 +44,7 @@ public class ItemController {
 	}
 
 	/**
-	 * Request should be in json format [{"key" :"data","value" : "data"}]
+	 * Request should be in JSON format [{"key" :"data","value" : "data"}]
 	 * @param paramList
 	 * @return
 	 */

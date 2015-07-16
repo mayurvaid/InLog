@@ -20,14 +20,19 @@ public interface IUserService {
 	public abstract void saveUserDetails(User user) throws InlogException;
 	
 	/**
-	 * This method validates the auth token using jjwt which uses HMAC256 alogorithm
-	 * to convert the given inout to 256 bytes token
+	 * This method validates the auth token using jjwt which uses HMAC256 algorithm
+	 * to convert the given input to 256 bytes token
 	 * @param username
 	 * @param authToken
 	 * @return
 	 */
 	public abstract boolean validateAuthToken(String username , String authToken);
 	
+	/**
+	 * This method gets the userdetails based on the username from db
+	 * @param username
+	 * @return
+	 */
 	public User getUserDetails(String username);
 
 }

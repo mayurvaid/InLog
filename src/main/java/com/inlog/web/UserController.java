@@ -1,8 +1,10 @@
 package com.inlog.web;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,9 +38,15 @@ public class UserController {
 		return user;
 	}
 	
-	@RequestMapping(value = "/showUserDetails", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/verifyUserDetails", method = RequestMethod.GET, produces = "application/json")
 	public User showUserDetails(@ModelAttribute("user") User user) {
-		return user;
+		User userdata = userService.getUserDetails(user.getUsername());
+		
+		if(StringUtils.equalsIgnoreCase(userdata.getPassword(), user.getPassword())){
+			return userdata;
+		}else{
+			throw new AccessDeniedException("Either username or password is invalid");
+		}
 	}
 
 }

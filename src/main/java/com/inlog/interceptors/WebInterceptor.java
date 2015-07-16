@@ -3,6 +3,7 @@ package com.inlog.interceptors;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Component;
@@ -37,6 +38,10 @@ public class WebInterceptor implements HandlerInterceptor {
 			HttpServletResponse response, Object arg2) throws Exception {
 		String authHeader = request.getHeader(AUTH_HEADER);
 		String userName = request.getHeader(AUTH_USER_HEADER);
+		if(StringUtils.equals(request.getRequestURI(), "/InLog/api/v1/verifyUserDetails")){
+			return true;
+		}
+		
 		if (!userService.validateAuthToken(userName, authHeader)) {
 			throw new AccessDeniedException(
 					"Token not found or token is not valid , please contact administrator");
