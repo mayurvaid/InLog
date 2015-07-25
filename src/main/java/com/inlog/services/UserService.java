@@ -68,4 +68,9 @@ public class UserService implements IUserService {
 		return userRepository.getUserByUserName(username);
 	}
 
+	@Override
+	public void updateUserDetails(User user) throws InlogException {
+		userRepository.save(user);
+	}
+
 }

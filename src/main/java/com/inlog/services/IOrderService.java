@@ -3,6 +3,7 @@ package com.inlog.services;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import com.inlog.entities.CountDataObject;
 import com.inlog.entities.Order;
 
 /**
@@ -36,4 +37,6 @@ public interface IOrderService {
 	 * @throws NoSuchMethodException
 	 */
 	List<Order> getOrderByCriteria(Order order) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException;
+	
+	List<CountDataObject> getOrderDataForGraph();
 }

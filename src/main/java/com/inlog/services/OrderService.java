@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.inlog.commons.CommonUtilities;
 import com.inlog.dao.IOrderDao;
 import com.inlog.dao.repositories.OrdeRepository;
+import com.inlog.entities.CountDataObject;
 import com.inlog.entities.Item;
 import com.inlog.entities.Order;
 
@@ -81,6 +82,11 @@ public class OrderService implements IOrderService {
 		}
 
 		return orderList;
+	}
+
+	@Override
+	public List<CountDataObject> getOrderDataForGraph() {
+		return orderDao.getOrderDataForGraph();
 	}
 
 }

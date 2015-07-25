@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.inlog.entities.CountDataObject;
 import com.inlog.entities.Order;
 import com.inlog.services.IOrderService;
 
@@ -41,6 +42,11 @@ public class OrderController {
 			throws IllegalAccessException, InvocationTargetException,
 			NoSuchMethodException {
 		return orderService.getOrderByCriteria(order);
+	}
+	
+	@RequestMapping(value = "/getOrderDataForGraph", method = RequestMethod.GET, produces = "application/json")
+	public List<CountDataObject> getOrderDataForGraph(){
+		return orderService.getOrderDataForGraph();
 	}
 
 }

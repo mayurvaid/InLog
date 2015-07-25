@@ -38,6 +38,16 @@ public class UserController {
 		return user;
 	}
 	
+	@SecurityCheck(userRole = UserRoleEnum.ADMIN)
+	@RequestMapping(value = "/updateUserDetails", method = RequestMethod.POST, produces = "application/json")
+	public User updateUserDetails(@ModelAttribute("user") User user)
+			throws InlogException {
+		logger.info("Update user details {}", user);
+		
+		userService.updateUserDetails(user);
+		return user;
+	}
+	
 	@RequestMapping(value = "/verifyUserDetails", method = RequestMethod.GET, produces = "application/json")
 	public User showUserDetails(@ModelAttribute("user") User user) {
 		User userdata = userService.getUserDetails(user.getUsername());

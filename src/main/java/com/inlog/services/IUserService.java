@@ -34,5 +34,7 @@ public interface IUserService {
 	 * @return
 	 */
 	public User getUserDetails(String username);
+	
+	public abstract void updateUserDetails(User user) throws InlogException;
 
 }

@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "item")
-public class Item extends BaseDataObject{
+public class Item extends BaseDataObject {
 	@Id
 	private String id;
 	private String categoryName;
@@ -19,84 +19,138 @@ public class Item extends BaseDataObject{
 	private String itemtype;
 	private String itemName;
 	private String quanityunit;
+	private String userId;
+	private String itemStatus;
+	private Integer itemCount;
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getItemStatus() {
+		return itemStatus;
+	}
+
+	public void setItemStatus(String itemStatus) {
+		this.itemStatus = itemStatus;
+	}
+
+	public Integer getItemCount() {
+		return itemCount;
+	}
+
+	public void setItemCount(Integer itemCount) {
+		this.itemCount = itemCount;
+	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getCategoryName() {
 		return categoryName;
 	}
+
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
+
 	public Double getWidth() {
 		return width;
 	}
+
 	public void setWidth(Double width) {
 		this.width = width;
 	}
+
 	public Double getHeight() {
 		return height;
 	}
+
 	public void setHeight(Double height) {
 		this.height = height;
 	}
+
 	public Integer getQuantity() {
 		return quantity;
 	}
+
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
+
 	public Double getPrice() {
 		return price;
 	}
+
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
 	public String getColor() {
 		return color;
 	}
+
 	public void setColor(String color) {
 		this.color = color;
 	}
+
 	public String getBrand() {
 		return brand;
 	}
+
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
+
 	public String getShape() {
 		return shape;
 	}
+
 	public void setShape(String shape) {
 		this.shape = shape;
 	}
+
 	public String getFabric() {
 		return fabric;
 	}
+
 	public void setFabric(String fabric) {
 		this.fabric = fabric;
 	}
+
 	public String getItemtype() {
 		return itemtype;
 	}
+
 	public void setItemtype(String itemtype) {
 		this.itemtype = itemtype;
 	}
+
 	public String getItemName() {
 		return itemName;
 	}
+
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
+
 	public String getQuanityunit() {
 		return quanityunit;
 	}
+
 	public void setQuanityunit(String quanityunit) {
 		this.quanityunit = quanityunit;
 	}
+
 	@Override
 	public String toString() {
 		return "Item [itemId=" + id + ", categoryName=" + categoryName
@@ -112,6 +166,5 @@ public class Item extends BaseDataObject{
 				+ ", hashCode()=" + hashCode() + ", toString()="
 				+ super.toString() + "]";
 	}
-	
-	
+
 }

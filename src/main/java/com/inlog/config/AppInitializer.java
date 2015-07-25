@@ -17,6 +17,7 @@ public class AppInitializer implements WebApplicationInitializer {
         WebApplicationContext context = getContext();
         servletContext.addListener(new ContextLoaderListener(context));
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet("DispatcherServlet", new DispatcherServlet(context));
+        servletContext.addFilter("corsFilter", new CORSFilter()).addMappingForUrlPatterns(null, false, "/*");
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/*");
     }

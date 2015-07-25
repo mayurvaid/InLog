@@ -11,6 +11,15 @@ public class Order extends BaseDataObject {
 	private String id;
 	private List<String> itemList;
 	private List<Item> itemDataList;
+	private String orderSatus;
+
+	public String getOrderSatus() {
+		return orderSatus;
+	}
+
+	public void setOrderSatus(String orderSatus) {
+		this.orderSatus = orderSatus;
+	}
 
 	public List<Item> getItemDataList() {
 		return itemDataList;

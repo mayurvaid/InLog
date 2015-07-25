@@ -1,5 +1,7 @@
 package com.inlog.entities;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -24,6 +26,26 @@ public class User extends BaseDataObject {
 	
 	private String userRole;
 	
+	private List<String> userList;
+	
+	private List<String> itemList;
+
+	public List<String> getItemList() {
+		return itemList;
+	}
+
+	public void setItemList(List<String> itemList) {
+		this.itemList = itemList;
+	}
+
+	public List<String> getUserList() {
+		return userList;
+	}
+
+	public void setUserList(List<String> userList) {
+		this.userList = userList;
+	}
+
 	public String getUserRole() {
 		return userRole;
 	}
